@@ -1,5 +1,5 @@
 use std::io;
-mod fibonacci;
+mod math;
 
 fn main() {
     println!("Number algorithms in Rust");
@@ -11,6 +11,9 @@ fn main() {
     io::stdin().read_line(&mut count).expect("Insert a valid number");
     let count: usize = count.trim().parse().expect("Could not parse input test");
 
-    fibonacci::fibonacci(&count);
+    let fib_result = math::math::fibonacci(&count);
+    for x in fib_result.iter() {
+        println!("{}", x);
+    }
 }
 
